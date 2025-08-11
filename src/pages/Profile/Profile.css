@@ -1,0 +1,470 @@
+/* profile.css - 从微信小程序WXSS转换 */
+
+.profile-container {
+    min-height: 100vh;
+    background: #f5f5f5;
+    padding-bottom: 24px;
+    position: relative;
+  }
+  
+  /* 顶部导航 */
+  .search-bar {
+    padding: 90px 16px 10px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .back-btn {
+    padding: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  
+  .back-btn:hover {
+    opacity: 0.7;
+  }
+  
+  .back-arrow {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    transform: scale(0.8, 1.2);
+  }
+  
+  .page-title {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* 用户信息卡片 */
+  .user-card {
+    margin: 16px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .user-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 0;
+    background-color: #f5f5f5;
+    object-fit: cover;
+  }
+  
+  .user-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    margin-left: 16px;
+  }
+  
+  .nickname-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    min-height: 25px;
+    width: 100%;
+  }
+  
+  .nickname {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 0.5ch;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  
+  .nickname.editable {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .nickname.editable:hover {
+    color: var(--color-primary);
+  }
+  
+  .nickname.editable:after {
+    content: "✎";
+    font-size: 14px;
+    margin-left: 5px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .nickname.editable:hover:after {
+    opacity: 0.7;
+  }
+  
+  .member-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--color-primary);
+    background: rgba(67, 182, 146, 0.1);
+    padding: 6px 9px;
+    border-radius: 999px;
+    line-height: 1.2;
+    margin-top: 2px;
+    margin-left: 0.5ch;
+    max-width: fit-content;
+    max-height: 10ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .member-tag text {
+    display: block;
+    line-height: 1.2;
+    position: relative;
+    top: 0;
+  }
+  
+  .member-tag.pro {
+    color: #fff;
+    background: linear-gradient(90deg, #43B692, #3F88C5);
+    font-weight: 500;
+    box-shadow: 0 1px 4px rgba(67, 182, 146, 0.2);
+  }
+  
+  .usage-stats {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 12px;
+  }
+  
+  .stat-item {
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .stat-item.clickable:first-child .stat-num {
+    color: #e74c3c;
+  }
+  
+  .stat-item.clickable {
+    position: relative;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+  
+  .stat-item.clickable:hover {
+    transform: translateY(-2px);
+  }
+  
+  .stat-item.clickable:active {
+    opacity: 0.7;
+  }
+  
+  .stat-num {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+  }
+  
+  .stat-label {
+    font-size: 13px;
+    color: #999;
+    margin-top: 2px;
+    display: block;
+  }
+  
+  /* 会员方案标题 */
+  .section-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin: 24px 16px 12px;
+  }
+  
+  /* 会员方案卡片 */
+  .plans-grid {
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .plan-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .plan-card .plan-price,
+  .plan-card .plan-period,
+  .plan-card .plan-features text {
+    color: #333;
+  }
+  
+  .plan-card.current {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+  }
+  
+  .plan-card.current .plan-price,
+  .plan-card.current .plan-period,
+  .plan-card.current .plan-features text {
+    color: #fff;
+  }
+  
+  .plan-name {
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .plan-price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .plan-period {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .plan-features {
+    margin-top: 12px;
+    text-align: left;
+  }
+  
+  .plan-features text {
+    font-size: 13px;
+    color: #666;
+    display: block;
+    margin-top: 4px;
+  }
+  
+  /* 功能列表 */
+  .function-list {
+    margin: 0 16px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  
+  .function-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .function-item:hover {
+    background-color: rgba(0,0,0,0.01);
+  }
+  
+  .function-item:active {
+    background-color: rgba(0,0,0,0.03);
+  }
+  
+  .function-item:last-child {
+    border-bottom: none;
+  }
+  
+  .function-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .function-item text {
+    flex: 1;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .arrow {
+    font-size: 16px;
+    color: #999;
+    flex: none !important;
+  }
+  
+  /* 版本信息 */
+  .version {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 24px;
+    padding-bottom: 16px;
+  }
+  
+  /* 登录按钮 */
+  .login-btn-wrapper {
+    padding: 16px 0;
+    text-align: center;
+  }
+  
+  .login-btn {
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    height: 44px;
+    font-size: 16px;
+    border-radius: 22px;
+    width: 60%;
+    margin: 0 auto;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background: #3aa084; /* 稍深一点的色调 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(67, 182, 146, 0.3);
+  }
+  
+  .login-btn:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+  
+  /* 头像上传按钮 */
+  .avatar-button {
+    padding: 0;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    background: none;
+    flex-shrink: 0;
+    margin-right: 8px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .avatar-button:hover::after {
+    content: "更换";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  /* 昵称编辑区域 */
+  .nickname-input {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid var(--color-primary);
+    padding: 2px 0;
+    width: 100%;
+    height: 25px;
+    margin-left: 0.75ch;
+    line-height: 25px;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+  }
+  
+  /* 服务模态窗口 */
+  .service-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .qrcode {
+    width: 200px;
+    height: 200px;
+    margin: 10px 0;
+  }
+  
+  .tip-text {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  /* 响应式调整 */
+  @media (min-width: 768px) {
+    .profile-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    .user-card, 
+    .plans-grid, 
+    .function-list {
+      max-width: 768px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .section-title {
+      max-width: 768px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .plans-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
